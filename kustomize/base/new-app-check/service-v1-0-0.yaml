@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  annotations: {}
+  labels:
+    app: new-app-check-v1-0-0
+    applicationId: app_4dc31f77-dc34-43ff-8514-685eedaf6263
+    version: v1.0.0
+    organizationId: org_3ead97cf-c1ec-4b6a-a30e-3a81e9bbbd1a
+    projectId: project_939bb6a4-9f53-4587-a860-15820983b92d
+  name: new-app-check-v1-0-0
+spec:
+  selector:
+    app: new-app-check-v1-0-0
