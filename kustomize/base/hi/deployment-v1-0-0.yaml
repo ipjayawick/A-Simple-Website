@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hi-v1-0-0
+  labels:
+    app: hi-v1-0-0
+    applicationId: app_a0a09642-057e-4d95-aa50-e56e24f6eb97
+    version: v1.0.0
+    organizationId: org_3ead97cf-c1ec-4b6a-a30e-3a81e9bbbd1a
+    projectId: project_429095e6-9936-4562-a9eb-39ee130ec94f
+  annotations:
+    reloader.stakater.com/auto: 'true'
+spec:
+  selector:
+    matchLabels:
+      app: hi-v1-0-0
+  template:
+    metadata:
+      labels:
+        app: hi-v1-0-0
+        applicationId: app_a0a09642-057e-4d95-aa50-e56e24f6eb97
+        version: v1.0.0
+        organizationId: org_3ead97cf-c1ec-4b6a-a30e-3a81e9bbbd1a
+        projectId: project_429095e6-9936-4562-a9eb-39ee130ec94f
