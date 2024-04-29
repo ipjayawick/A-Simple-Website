@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  annotations: {}
+  labels:
+    app: checking-new-v1-0-0
+    applicationId: app_e75d6cfb-9bde-46f2-9106-baa693468620
+    version: v1.0.0
+    organizationId: org_3ead97cf-c1ec-4b6a-a30e-3a81e9bbbd1a
+    projectId: project_429095e6-9936-4562-a9eb-39ee130ec94f
+  name: checking-new-v1-0-0
+spec:
+  selector:
+    app: checking-new-v1-0-0

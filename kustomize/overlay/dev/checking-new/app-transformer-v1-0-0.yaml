@@ -1,0 +1,49 @@
+apiVersion: transformers.customplugin.co/v1
+kind: SkyUAppTransformer
+metadata:
+  name: skyu-deployment
+  annotations:
+    config.kubernetes.io/function: |
+      exec:
+        path: skyu-app-transformer
+spec:
+  applicationContainers:
+    - imageTag: latest
+      cpuRequestMili: 100
+      cpuLimitMili: 150
+      memoryRequestMb: 350
+      memoryLimitMb: 450
+      args: []
+      command: []
+      configMounts: []
+      applicationPorts:
+        - port: 80
+          targetPort: 80
+          protocol: TCP
+      healthChecks: []
+      name: checking-new-main
+      imagePullPolicy: Always
+      imageRegistry: docker.io/checking-new
+      imagePullSecretName: imagepull-docker
+      credentialId: credential_59428d19-e961-4ef6-92b7-135a7c13fc45
+  minReplicas: 1
+  maxReplicas: 1
+  terminationGracePeriodSeconds: 60
+  nodeSelector: {}
+  suspend: false
+  ttlSecondsAfterFinished: 0
+  labels:
+    app: checking-new
+    version: v1.0.0
+    applicationId: app_e75d6cfb-9bde-46f2-9106-baa693468620
+    projectId: project_429095e6-9936-4562-a9eb-39ee130ec94f
+    organizationId: org_3ead97cf-c1ec-4b6a-a30e-3a81e9bbbd1a
+    environmentId: env_e6a75ae3-26b5-40cd-8f6c-3e3c77770949
+    environmentName: dev
+  horizontalAutoScalingRules: []
+  volumes: []
+  type: Deployment
+  name: checking-new
+  serviceType: ClusterIP
+  version: v1.0.0
+  namespace: sample-proj-dev
