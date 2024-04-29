@@ -1,0 +1,16 @@
+apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+metadata:
+  annotations: {}
+  name: checking-v1-0-0
+  labels:
+    app: checking-v1-0-0
+    applicationId: app_36f35a6c-64c7-4a5d-9b3b-9bc738c71bee
+    version: v1.0.0
+    organizationId: org_3ead97cf-c1ec-4b6a-a30e-3a81e9bbbd1a
+    projectId: project_429095e6-9936-4562-a9eb-39ee130ec94f
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: checking-v1-0-0
